@@ -3,12 +3,12 @@ var builder = require('botbuilder');
 var google = require("googleapis");
 var oAuth2 = google.auth.OAuth2;
 var scopes = ['https://www.googleapis.com/auth/calendar'];
-var OAuthConfig = require('./secret');
+var configVariables = require('./secret');
 
 var redirectURL = 'http://localhost:3978/oauthcallback';
 
 var getOAuthClient = function() {
-    return new oAuth2(OAuthConfig.clientID, OAuthConfig.clientSecret,redirectURL);
+    return new oAuth2(configVariables.clientID, configVariables.clientSecret,redirectURL);
 };
 
 /*
@@ -34,8 +34,8 @@ server.listen(process.env.port || process.env.PORT || 3978, function () {
 
 // Create chat connector for communicating with the Bot Framework Service
 var connector = new builder.ChatConnector({
-    appId: 'e0ea5fe2-04d1-485e-af4c-fccf175a06f3',
-    appPassword: '3XXpWi6ip37ktNBScKPpqzs'
+    appId: configVariables.appID,
+    appPassword: configVariables.appPassword 
 });
 var bot = new builder.UniversalBot(connector);
 
