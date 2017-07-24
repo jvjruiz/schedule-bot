@@ -1,0 +1,17 @@
+{
+  "name": "agency-bot",
+  "version": "1.0.0",
+  "description": "a little practice bot made",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "botbuilder": "^3.8.4",
+    "google-auth-library": "^0.10.0",
+    "googleapis": "^20.1.0",
+    "restify": "^4.1.1"
+  }
+}
